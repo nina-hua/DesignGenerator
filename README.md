@@ -34,7 +34,9 @@ For our experimentations, we tried two different generators and explored the eff
 **Different Generators:**
 
 Both generators we tried were versions of a U-Net architecture, but the way the model goes “down” and “up” are different.
+
 Generator A uses a max pooling layer and a double convolutional layer with batch norm and ReLU when going “down”. When going “up”, generator A uses upsampling + a double convolutional layer with batch norm and ReLU. Generator B uses a single convolutional layer with instance normalization, LeakyReLU, and dropout when going “down”, When going “up”, generator B uses a transposed convolution (i.e. learned upsampling), instance normalization, ReLU, and dropout.
+
 Generator B produced more vivid and colorful images, but lacked in capturing the form of the couch clearly, while Generator A produced images which captured the couch structure better, but the images were dull, gray, and blurry.
 
 **Clamping:**
