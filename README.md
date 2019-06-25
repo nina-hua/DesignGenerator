@@ -43,7 +43,7 @@ Generator B produced more vivid and colorful images, but lacked in capturing the
 
 Clamping is when you force the pixels to be within a range. For images, the range of pixels is either 0 to 1, if normalized, or 0 to 255, if not normalized. The generator could produce pixels out of this range, and so clamping throughout the generation model could help generate better images. Using Generator B, we found that clamping, surprisingly, worsened our generated images.
 
-#### Conclusions:
+### Conclusions:
 Throughout this project, we made a lot of progress. Overall, this project has taught us that the choice of loss functions can make a dramatic change in performance, clamping may not always be the best option (even if it’s the more logical one), and different generators produce dramatically different images.
 
 Our early-stage models were producing black images. We saw the most improvement in our models when we implemented the loss functions we discussed above. Those loss functions helped bring the generator to a state where it was producing images which were tricking the discriminator, through the shape and color of the generated courches.
