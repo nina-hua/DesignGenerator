@@ -26,7 +26,7 @@ A sketch is given as an input to the generator. The generator then outputs a new
 
 **Loss Functions:**
 
-The loss functions which we used are as follows. For the discriminator, the loss is the sum of the discriminator’s prediction on the actual images (real images) plus the discriminator’s prediction on the generated images (fake images). For the generator, the loss is the sum of the discriminator’s predictions on the generated images and a scaled factor of the MSE for the pixel values of generated image vs. the actual image. The difference in the generator’s loss is that we lie and say that the generated images are real. The lying helps our generator produce images which have the same underlying features of the real images and the scaled pixel MSE helps the generator produce images in the right color.
+The loss functions which we used are as follows. For the discriminator, the loss is the sum of the MSE of the discriminator’s prediction on the actual images (real images) plus the MSE of the discriminator’s prediction on the generated images (fake images). For the generator, the loss is the sum of the MSE of the discriminator’s predictions on the generated images and a scaled factor of the L1 difference of the pixel values of generated image vs. the actual image. The difference in the generator’s loss is that we lie and say that the generated images are real when computing the MSE of the discriminator's predictions. The lying helps our generator produce images which have the same underlying features of the real images and the scaled L1 pixel loss helps the generator produce images in the right color.
 
 ### Experiments:
 For our experimentations, we tried two different generators and explored the effects of clamping v.s. not clamping.
@@ -48,4 +48,4 @@ Throughout this project, we made a lot of progress. Overall, this project has ta
 
 Our early-stage models were producing black images. We saw the most improvement in our models when we implemented the loss functions we discussed above. Those loss functions helped bring the generator to a state where it was producing images which were tricking the discriminator, through the shape and color of the generated courches.
 
-With more fine-tuning of the hyperparameters, such as the value to scale the pixel MSE, will help the model generate more realistic images.
+With more fine-tuning of the hyperparameters, such as the value to scale the L1 pixel loss, will help the model generate more realistic images.
